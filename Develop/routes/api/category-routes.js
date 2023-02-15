@@ -22,12 +22,17 @@ router.get('/:id', (req, res) => {
 		},
 		include: [Product],
 	}).then((results) => {
+		// if (results) {
+		// 	res.status(404).json({ messsage: "No category found with this id" });
+		// 	return;
+		// }
 		res.json(results);
 	});
 });
 
 router.post('/', (req, res) => {
   // create a new category
+  console.log(req.body)
   Category.create({
 	id: req.body.id,
 	category_name: req.body.category_name,
@@ -38,8 +43,7 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
-  Category.create({
-		id: req.body.id,
+  Category.update({
 		category_name: req.body.category_name,
 	}).then((results) => {
 		res.json(results);
@@ -52,7 +56,12 @@ router.delete('/:id', (req, res) => {
 		where: {
 			id: req.params.id,
 		},
-	}).then((results) => {
+	})
+	.then((results) => {
+		if (results) {
+			res.status(404).json({ messsage: "No category found with this id" });
+			return;
+		}
 		res.json(results);
 	});
 });
