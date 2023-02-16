@@ -18,15 +18,19 @@
 ## Installation
 ***Please install the package locally to your working project directory.***
 - On your preferred code editor, use the command line to run `npm i`
+- The latest version of the required packages will be installed.
 
 
 ## Usage
 ***Please ensure you have followed above steps to install package first!***
-- Access your working directory project folder. Copy and paste the code below to run the application 
-`node server.js`
+- Access your working directory project folder. Copy and paste the code below to connect to your schema from the MySQL shell 
+`mysql -u root -p`
+`source Develop/db/schema.sql `
+- Once done enter **quit or exit** to terminate the sql session.  Keyboard shortcut **CTRL+C** will bring you back to your  Terminal/Shell/Bash and run the following codes
 
+`npm run seed`
 
-`BLANK`
+`npm run start`
 
 ***See the images and video below for demo.***
 
