@@ -15,6 +15,8 @@
 
 ## Description
 *Created the back end for an e-commerce site by modifying starter code.This application will use* ***MySQL2, Express, Sequelize and dotenv.***
+
+>GIVEN a functional Express.js API
 ## Installation
 ***Please install the package locally to your working project directory.***
 - On your preferred code editor, use the command line to run `npm i`
