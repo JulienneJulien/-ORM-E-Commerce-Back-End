@@ -34,6 +34,10 @@ router.get('/:id', (req, res) => {
 			},
 		],
 	}).then((results) => {
+		if (!results) {
+			res.status(404).json({ messsage: "No tag found with this id" });
+			return;
+		}
 		res.json(results);
 	});
 });
@@ -73,6 +77,10 @@ router.delete('/:id', (req, res) => {
 			id: req.params.id,
 		},
 	}).then((results) => {
+		if (!results) {
+			res.status(404).json({ messsage: "No tag found with this id" });
+			return;
+		}
 		res.json(results);
 	});
 });
