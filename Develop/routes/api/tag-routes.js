@@ -33,7 +33,8 @@ router.get('/:id', (req, res) => {
 				through: ProductTag,
 			},
 		],
-	}).then((results) => {
+	})
+	.then((results) => {
 		if (!results) {
 			res.status(404).json({ messsage: "No tag found with this id" });
 			return;
@@ -41,7 +42,6 @@ router.get('/:id', (req, res) => {
 		res.json(results);
 	});
 });
-
 router.post('/', (req, res) => {
   // create a new tag
   console.log(req.body)
